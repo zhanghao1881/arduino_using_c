@@ -26,14 +26,10 @@ enum
 #define COLS 10
 
 void dump();
-void help();
 void runSML();
-void console();
-void Scanf(uint16_t *buf);
-
 uint16_t input_code();
 uint16_t Scanf_data();
-uint16_t Scanf_data();
+
 
 
 void dump() //Pretty Show Memory For Debugging
@@ -138,7 +134,7 @@ uint16_t input_code()
 	while (1)
 	{
 		uart_putchar(li);
-		ct = uart_getchar();
+		ct = Scanf_data();
 		if (ct == -1)
 		{
 			break;
@@ -166,23 +162,5 @@ uint16_t Scanf_data()
 			i++;
 		}
 		if (ct > 0)return ct;
-	}
-}
-void Scanf(uint16_t *buf)
-{
-	uint8_t i = 0;
-	bool flag = 0;
-	while (1)
-	{
-		while (uart_char_waiting() > 0)
-		{
-			buf[i++] = uart_getchar();
-			_delay_ms(2);
-			flag = 1;
-		}
-		if (flag == 1)
-		{
-			break;
-		}
 	}
 }
