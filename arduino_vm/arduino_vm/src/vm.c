@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 #define MAX_MEM 100
-int MEM[MAX_MEM] = {0}, ADDER = 0; //ONLY MAX_MEN MEMORY, ONE REGISTER ADDER
+int MEM[MAX_MEM] = {0}, ADDER = 0; 
 #define MAX_STACK 30
 int STACK[MAX_STACK] = {0};
 enum
